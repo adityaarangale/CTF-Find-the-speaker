@@ -1,0 +1,396 @@
+/* ============================================================
+   linkedin-style.css — ProNet professional profile theme
+   Used by: linkedin/alex-carter.html
+   Palette: white bg, #0a66c2-adjacent blue accent
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ln-blue:       #0077b5;
+  --ln-blue-dark:  #004471;
+  --ln-blue-light: #e8f3fb;
+  --ln-gray-bg:    #f3f2ef;
+  --ln-border:     #e0e0e0;
+  --ln-text:       #000000e0;
+  --ln-muted:      #00000099;
+  --ln-white:      #ffffff;
+  --ln-shadow:     0 0 0 1px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.06);
+  --font-stack:    'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-stack);
+  background: var(--ln-gray-bg);
+  color: var(--ln-text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ---- SKIP LINK ---- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ln-blue);
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  z-index: 9999;
+}
+.skip-link:focus { left: 0; }
+
+/* ---- TOP NAV ---- */
+.ln-topbar {
+  background: var(--ln-white);
+  border-bottom: 1px solid var(--ln-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.ln-topbar-inner {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ln-wordmark {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--ln-blue);
+  letter-spacing: -0.5px;
+  font-style: italic;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.ln-search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--ln-blue-light);
+  border-radius: 4px;
+  padding: 6px 12px;
+  gap: 8px;
+  flex: 0 0 280px;
+  border: 1px solid transparent;
+}
+
+.ln-search-bar svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--ln-muted);
+  flex-shrink: 0;
+}
+
+.ln-search-bar input {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: var(--ln-text);
+  font-family: var(--font-stack);
+  outline: none;
+  width: 100%;
+}
+
+.ln-search-bar input::placeholder { color: var(--ln-muted); }
+
+.ln-nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.ln-nav-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: default;
+  color: var(--ln-muted);
+  font-size: 11px;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: var(--font-stack);
+}
+
+.ln-nav-icon svg { width: 24px; height: 24px; fill: var(--ln-muted); }
+
+/* ---- LAYOUT ---- */
+.ln-layout {
+  max-width: 860px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ---- PROFILE CARD ---- */
+.ln-profile-card {
+  background: var(--ln-white);
+  border-radius: 8px;
+  box-shadow: var(--ln-shadow);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.ln-cover-banner {
+  height: 130px;
+  background: linear-gradient(135deg, #0052a3, #0077b5, #00a0dc);
+  position: relative;
+}
+
+.ln-profile-photo-wrap {
+  position: absolute;
+  bottom: -44px;
+  left: 24px;
+}
+
+.ln-profile-photo {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  border: 4px solid var(--ln-white);
+  object-fit: cover;
+  background: #c5cae9;
+  display: block;
+}
+
+.ln-profile-info {
+  padding: 56px 24px 20px;
+}
+
+.ln-profile-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ln-text);
+  margin-bottom: 4px;
+}
+
+.ln-profile-headline {
+  font-size: 0.92rem;
+  color: var(--ln-text);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+
+.ln-profile-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--ln-muted);
+  margin-bottom: 16px;
+}
+
+.ln-profile-location svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--ln-muted);
+}
+
+.ln-profile-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ln-btn-primary {
+  background: var(--ln-blue);
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: default;
+  font-family: var(--font-stack);
+}
+
+.ln-btn-secondary {
+  background: none;
+  color: var(--ln-blue);
+  border: 1.5px solid var(--ln-blue);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: default;
+  font-family: var(--font-stack);
+}
+
+/* ---- SECTIONS ---- */
+.ln-section {
+  background: var(--ln-white);
+  border-radius: 8px;
+  box-shadow: var(--ln-shadow);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.ln-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ln-text);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ln-border);
+}
+
+.ln-about-text {
+  font-size: 0.9rem;
+  color: var(--ln-text);
+  line-height: 1.65;
+}
+
+/* ---- EXPERIENCE ---- */
+.ln-exp-item {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.ln-exp-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  object-fit: contain;
+  background: #f4f5fb;
+  border: 1px solid var(--ln-border);
+  padding: 4px;
+}
+
+.ln-exp-details { flex: 1; }
+
+.ln-exp-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ln-text);
+  margin-bottom: 2px;
+}
+
+.ln-exp-company {
+  font-size: 0.85rem;
+  color: var(--ln-text);
+  margin-bottom: 2px;
+}
+
+.ln-exp-company a {
+  color: var(--ln-text);
+  text-decoration: none;
+}
+.ln-exp-company a:hover { color: var(--ln-blue); text-decoration: underline; }
+
+.ln-exp-dates {
+  font-size: 0.8rem;
+  color: var(--ln-muted);
+  margin-bottom: 6px;
+}
+
+.ln-exp-desc {
+  font-size: 0.85rem;
+  color: var(--ln-muted);
+  line-height: 1.6;
+}
+
+/* ---- CONTACT / FEATURED ---- */
+.ln-contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ln-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.ln-contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--ln-blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ln-contact-icon svg { width: 18px; height: 18px; fill: var(--ln-blue); }
+
+.ln-contact-label {
+  font-size: 0.78rem;
+  color: var(--ln-muted);
+  display: block;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.ln-contact-value {
+  font-size: 0.9rem;
+  color: var(--ln-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ln-contact-value:hover { text-decoration: underline; }
+
+/* ---- SIDEBAR CARDS ---- */
+.ln-sidebar-card {
+  background: var(--ln-white);
+  border-radius: 8px;
+  box-shadow: var(--ln-shadow);
+  padding: 18px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+}
+
+.ln-sidebar-card h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ln-text);
+}
+
+.ln-sidebar-card p {
+  color: var(--ln-muted);
+  line-height: 1.55;
+  font-size: 0.82rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .ln-layout { grid-template-columns: 1fr; }
+  .ln-sidebar { display: none; }
+  .ln-search-bar { flex: 0 0 160px; }
+}
+
+@media (max-width: 480px) {
+  .ln-topbar-inner { gap: 8px; }
+  .ln-nav-icons { gap: 0; }
+  .ln-nav-icon { padding: 6px 8px; font-size: 10px; }
+  .ln-nav-icon span { display: none; }
+  .ln-search-bar { flex: 1; }
+}

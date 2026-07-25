@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="100" cy="100" r="100"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="100" cy="100" r="100" fill="#d1c4e9"/>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="200" rx="65" ry="70" fill="#2e4bd6" clip-path="url(#circleClip)"/>
+
+  <!-- Neck -->
+  <rect x="82" y="125" width="36" height="38" rx="12" fill="#c8956c"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="90" rx="46" ry="52" fill="#c8956c"/>
+
+  <!-- Hair -->
+  <ellipse cx="100" cy="50" rx="46" ry="18" fill="#3d2b1f"/>
+  <rect x="54" y="50" width="92" height="20" fill="#3d2b1f"/>
+  <ellipse cx="56" cy="82" rx="10" ry="28" fill="#3d2b1f"/>
+  <ellipse cx="144" cy="82" rx="10" ry="28" fill="#3d2b1f"/>
+
+  <!-- Eyes -->
+  <ellipse cx="84" cy="86" rx="8" ry="6" fill="#fff"/>
+  <ellipse cx="116" cy="86" rx="8" ry="6" fill="#fff"/>
+  <circle cx="86" cy="87" r="4.5" fill="#3d2b1f"/>
+  <circle cx="118" cy="87" r="4.5" fill="#3d2b1f"/>
+  <circle cx="87" cy="85.5" r="1.5" fill="#fff"/>
+  <circle cx="119" cy="85.5" r="1.5" fill="#fff"/>
+
+  <!-- Eyebrows -->
+  <path d="M75 76 Q84 72 93 75" stroke="#3d2b1f" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M107 75 Q116 72 125 76" stroke="#3d2b1f" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M97 96 Q93 104 97 108 Q100 110 103 108 Q107 104 103 96" stroke="#b07a52" stroke-width="1" fill="none" stroke-linecap="round"/>
+
+  <!-- Mouth / smile -->
+  <path d="M88 118 Q100 127 112 118" stroke="#a0614a" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Ears -->
+  <ellipse cx="55" cy="92" rx="8" ry="13" fill="#c8956c"/>
+  <ellipse cx="145" cy="92" rx="8" ry="13" fill="#c8956c"/>
+</svg>
