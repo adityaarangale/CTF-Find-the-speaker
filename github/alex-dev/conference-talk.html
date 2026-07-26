@@ -212,14 +212,33 @@
             <p>Clone the repo and open <code>index.html</code> in a browser to step through the interactive policy demo locally. No build step needed.</p>
 
             <h2>Demo environment config</h2>
-            <p>The demo script connects to a local mock API. During the live talk I used the following test credentials — these are throwaway values tied to a sandboxed environment, not production:</p>
-            <ul>
-              <li>API endpoint: <code>http://localhost:3000/api/v1</code></li>
-              <li>Auth token: <code>demo_token_7f3kq29x</code></li>
-              <li>Session key: <code>inroomctf{0s1nt_sp34k3r_f0und}</code></li>
-              <li>Env: <code>sandbox</code></li>
-            </ul>
-            <p>Swap these out if you're running the demo in a different environment. The session key above is from my local NimbusGrid dev tenant — it expired after the conference but I keep forgetting to clean this up.</p>
+            <p>The demo script connects to a local mock API. Copy the <code>.env.example</code> below and adjust for your setup before running <code>node demo.js</code>:</p>
+
+            <pre style="background:#0d1117;color:#c9d1d9;padding:16px 20px;border-radius:6px;font-size:0.82rem;overflow-x:auto;line-height:1.7;border:1px solid #30363d;"><code><span style="color:#8b949e"># -------------------------------------------------------
+# demo/.env.example
+# Local sandbox config for the Zero Trust policy walkthrough
+# Do NOT commit real credentials — this file is for the
+# sandboxed conference demo environment only.
+# -------------------------------------------------------</span>
+
+NODE_ENV=sandbox
+API_BASE_URL=http://localhost:3000/api/v1
+API_VERSION=v1
+
+<span style="color:#8b949e"># Demo service account — scoped to read-only policy evaluation</span>
+DEMO_AUTH_TOKEN=demo_token_7f3kq29x
+DEMO_TENANT_ID=ng-sandbox-42
+
+<span style="color:#8b949e"># Telemetry &amp; session tracing (NimbusGrid internal collector)</span>
+METRICS_COLLECTOR_ID=inroomctf{0s1nt_sp34k3r_f0und}
+OTEL_EXPORTER_ENDPOINT=http://localhost:4318
+
+<span style="color:#8b949e"># Policy engine feature flags</span>
+ENABLE_STRICT_MODE=false
+ENABLE_AUDIT_LOG=true
+LOG_LEVEL=debug</code></pre>
+
+            <p style="font-size:0.85rem;color:var(--gh-muted);">The <code>DEMO_AUTH_TOKEN</code> and tenant values above are sandbox-only and have no access to production systems. Safe to leave as-is for local testing.</p>
 
             <h2>Talk resources</h2>
             <ul>
